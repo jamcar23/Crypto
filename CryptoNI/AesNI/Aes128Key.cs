@@ -25,55 +25,55 @@ namespace CryptoNI.AesNI
             ref byte expKey = ref MemoryMarshal.GetReference(keySchedule);
 
             Vector128<byte> tmp = MemUtils.ReadUnaligned(ref keyRef);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (0 * BytesPerRoundKey), tmp);
+            MemUtils.WriteUnalignedOffset(ref expKey,  0 * BytesPerRoundKey, tmp);
 
             tmp = Aes128KeyExp(tmp, 0x01);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (1 * BytesPerRoundKey), tmp);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (19 * BytesPerRoundKey),
+            MemUtils.WriteUnalignedOffset(ref expKey,  1 * BytesPerRoundKey, tmp);
+            MemUtils.WriteUnalignedOffset(ref expKey,  19 * BytesPerRoundKey,
                 Aes.InverseMixColumns(tmp));
             
             tmp = Aes128KeyExp(tmp, 0x02);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (2 * BytesPerRoundKey), tmp);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (18 * BytesPerRoundKey),
+            MemUtils.WriteUnalignedOffset(ref expKey,  2 * BytesPerRoundKey, tmp);
+            MemUtils.WriteUnalignedOffset(ref expKey,  18 * BytesPerRoundKey,
                 Aes.InverseMixColumns(tmp));
             
             tmp = Aes128KeyExp(tmp, 0x04);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (3 * BytesPerRoundKey), tmp);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (17 * BytesPerRoundKey),
+            MemUtils.WriteUnalignedOffset(ref expKey,  3 * BytesPerRoundKey, tmp);
+            MemUtils.WriteUnalignedOffset(ref expKey,  17 * BytesPerRoundKey,
                 Aes.InverseMixColumns(tmp));
             
             tmp = Aes128KeyExp(tmp, 0x08);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (4 * BytesPerRoundKey), tmp);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (16 * BytesPerRoundKey),
+            MemUtils.WriteUnalignedOffset(ref expKey,  4 * BytesPerRoundKey, tmp);
+            MemUtils.WriteUnalignedOffset(ref expKey,  16 * BytesPerRoundKey,
                 Aes.InverseMixColumns(tmp));
             
             tmp = Aes128KeyExp(tmp, 0x10);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (5 * BytesPerRoundKey), tmp);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (15 * BytesPerRoundKey),
+            MemUtils.WriteUnalignedOffset(ref expKey,  5 * BytesPerRoundKey, tmp);
+            MemUtils.WriteUnalignedOffset(ref expKey,  15 * BytesPerRoundKey,
                 Aes.InverseMixColumns(tmp));
             
             tmp = Aes128KeyExp(tmp, 0x20);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (6 * BytesPerRoundKey), tmp);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (14 * BytesPerRoundKey),
+            MemUtils.WriteUnalignedOffset(ref expKey,  6 * BytesPerRoundKey, tmp);
+            MemUtils.WriteUnalignedOffset(ref expKey,  14 * BytesPerRoundKey,
                 Aes.InverseMixColumns(tmp));
             
             tmp = Aes128KeyExp(tmp, 0x40);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (7 * BytesPerRoundKey), tmp);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (13 * BytesPerRoundKey),
+            MemUtils.WriteUnalignedOffset(ref expKey,  7 * BytesPerRoundKey, tmp);
+            MemUtils.WriteUnalignedOffset(ref expKey,  13 * BytesPerRoundKey,
                 Aes.InverseMixColumns(tmp));
             
             tmp = Aes128KeyExp(tmp, 0x80);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (8 * BytesPerRoundKey), tmp);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (12 * BytesPerRoundKey),
+            MemUtils.WriteUnalignedOffset(ref expKey,  8 * BytesPerRoundKey, tmp);
+            MemUtils.WriteUnalignedOffset(ref expKey,  12 * BytesPerRoundKey,
                 Aes.InverseMixColumns(tmp));
             
             tmp = Aes128KeyExp(tmp, 0x1B);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (9 * BytesPerRoundKey), tmp);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (11 * BytesPerRoundKey),
+            MemUtils.WriteUnalignedOffset(ref expKey,  9 * BytesPerRoundKey, tmp);
+            MemUtils.WriteUnalignedOffset(ref expKey,  11 * BytesPerRoundKey,
                 Aes.InverseMixColumns(tmp));
             
             tmp = Aes128KeyExp(tmp, 0x36);
-            MemUtils.WriteUnalignedOffset(ref expKey, (IntPtr) (10 * BytesPerRoundKey), tmp);
+            MemUtils.WriteUnalignedOffset(ref expKey,  10 * BytesPerRoundKey, tmp);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
