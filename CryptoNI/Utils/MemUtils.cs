@@ -11,7 +11,7 @@ namespace CryptoNI.Utils
             Unsafe.ReadUnaligned<Vector128<byte>>(ref source);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static Vector128<byte> ReadUnalighedOffset(ref byte source, int offset) =>
+        internal static Vector128<byte> ReadUnalignedOffset(ref byte source, int offset) =>
             Unsafe.ReadUnaligned<Vector128<byte>>(ref Unsafe.AddByteOffset(ref source, (IntPtr) offset));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
